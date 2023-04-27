@@ -46,7 +46,7 @@ public class Target : MonoBehaviour
         return new Vector3(Random.Range(-xRange, xRange), ySpawnPos);
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (gameManager.isGameActive)
         {
@@ -66,6 +66,15 @@ public class Target : MonoBehaviour
         }
     }
 
+    /*public void DestroyTarget()
+    {
+        if (gameManager.isGameActive)
+        {
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            gameManager.UpdateScore(pointValue);
+        }
+    }*/
 
     // Update is called once per frame
     void Update()
